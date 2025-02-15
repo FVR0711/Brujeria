@@ -27,15 +27,19 @@ class ClienteResource extends Resource
         return $form
             ->schema([
                 TextInput::make("nombre")
+                ->label("Nombre")
                 ->nullable(),
                 TextInput::make("edad")
                 ->nullable()
+                ->label("Edad")
                 ->numeric()
                 ->minValue(18),
                 TextInput::make("celular")
                 ->nullable()
+                ->label("No. Celular")
                 ->numeric(),
                 TextInput::make("ubicacion")
+                ->label("Ubicación")
                 ->nullable(),
             ]);
     }
@@ -44,14 +48,16 @@ class ClienteResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make("ip")
+                ->label("Direccion IP"),
                 TextColumn::make("nombre")
                 ->label("Nombre"),
                 TextColumn::make("edad")
                 ->label("Edad"),
                 TextColumn::make("celular")
-                ->label("Celular"),
+                ->label("No. Celular"),
                 TextColumn::make("ubicacion")
-                ->label("Ubicacion"),
+                ->label("Ubicación"),
             ])
             ->filters([
                 //
