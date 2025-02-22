@@ -8,4 +8,8 @@ Route::get('/', function () {
 });
 
 
+Route::get("/sitemap.xml", [PageControler::class,"getSitemap"])->name("getSitemap");
+
 Route::get('/{path}',[PageControler::class,"getPage"])->name("getPage");
+
+
